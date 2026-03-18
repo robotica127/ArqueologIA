@@ -34,12 +34,13 @@ export async function enviarAlChat(mensajes, servicio, burbuja) {
 
       console.log('chunk recibido:', chunk)
 
-      // si todavia tiene el placeholder lo reemplazo, si no concateno
-      if (burbuja.textContent === '...') {
-        burbuja.textContent = chunk
-      } else {
-        burbuja.textContent += chunk
+      // si todavia tiene el indicador de escritura lo elimino primero
+      var indicador = burbuja.querySelector('.indicador-escribiendo')
+      if (indicador) {
+        burbuja.innerHTML = ''
       }
+
+      burbuja.textContent += chunk
     }
 
   } catch (error) {

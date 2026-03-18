@@ -1,0 +1,40 @@
+/* indicador de escritura - tres puntos animados */
+
+.indicador-escribiendo {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 2px;
+}
+
+.punto {
+  width: 7px;
+  height: 7px;
+  background-color: var(--verde-principal);
+  border-radius: 50%;
+  animation: rebotar 1.2s infinite ease-in-out;
+}
+
+/* cada punto empieza un poco despues */
+.punto:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.punto:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.punto:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes rebotar {
+  0%, 60%, 100% {
+    transform: translateY(0);
+    opacity: 0.4;
+  }
+  30% {
+    transform: translateY(-8px);
+    opacity: 1;
+  }
+}

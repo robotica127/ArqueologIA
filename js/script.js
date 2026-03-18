@@ -35,8 +35,8 @@ async function enviarMensaje() {
   // muestro la burbuja del usuario inmediatamente
   agregarMensaje('usuario', msg)
 
-  // creo la burbuja del asistente con placeholder y guardo la referencia
-  var burbuja = agregarMensaje('asistente', '...')
+  // creo la burbuja del asistente con el indicador de escritura
+  var burbuja = agregarMensaje('asistente', '')
 
   // limpio el campo
   campo.value = ''
