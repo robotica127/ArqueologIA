@@ -9,4 +9,8 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
+  /* centramos la conversacion */
+  max-width: 780px;
+  width: 100%;
+  margin: 0 auto;
 }
