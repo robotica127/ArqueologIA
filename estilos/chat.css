@@ -1,0 +1,12 @@
+/* estilos del area principal del chat */
+
+#area-chat {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px 16px;
+  /* espacio abajo para que no quede tapado por la barra de entrada */
+  padding-bottom: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}

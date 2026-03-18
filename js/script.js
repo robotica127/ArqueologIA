@@ -1,5 +1,7 @@
 // punto de entrada principal
 
+import { agregarMensaje } from './utilidades/ui.js'
+
 // agarro los elementos del html
 var campo = document.getElementById('campo-mensaje')
 var btn = document.getElementById('btn-enviar')
@@ -12,6 +14,12 @@ function enviarMensaje() {
   if (msg === '') return
 
   console.log('mensaje del usuario:', msg)
+
+  // muestro la burbuja del usuario inmediatamente
+  agregarMensaje('usuario', msg)
+
+  // burbuja del asistente de placeholder, en el plan3 se llena con el stream
+  agregarMensaje('asistente', '...')
 
   // limpio el campo
   campo.value = ''
