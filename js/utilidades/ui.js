@@ -1,6 +1,7 @@
 // funciones para manejar la interfaz del chat
 
 var chat = document.getElementById('area-chat')
+var chatInterno = chat.querySelector('.chat-interno')
 
 // muestra la bienvenida como una burbuja del asistente con contenido enriquecido
 export function mostrarTarjetaBienvenida() {
@@ -48,7 +49,7 @@ export function mostrarTarjetaBienvenida() {
   burbuja.appendChild(textoSug)
   burbuja.appendChild(contenedorSug)
   div.appendChild(burbuja)
-  chat.appendChild(div)
+  chatInterno.appendChild(div)
 
   chat.scrollTop = chat.scrollHeight
 
@@ -58,7 +59,7 @@ export function mostrarTarjetaBienvenida() {
 
 // limpia todos los mensajes del area de chat
 export function limpiarChat() {
-  chat.innerHTML = ''
+  chatInterno.innerHTML = ''
 }
 
 // agrega una burbuja al chat y devuelve la referencia a la burbuja
@@ -92,7 +93,7 @@ export function agregarMensaje(rol, texto) {
   }
 
   div.appendChild(burbuja)
-  chat.appendChild(div)
+  chatInterno.appendChild(div)
 
   // scroll automatico al ultimo mensaje
   chat.scrollTop = chat.scrollHeight

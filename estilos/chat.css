@@ -3,14 +3,18 @@
 #area-chat {
   flex: 1;
   overflow-y: auto;
-  padding: 20px 16px;
   /* espacio abajo para que no quede tapado por la barra de entrada */
   padding-bottom: 80px;
+  width: 100%;
+}
+
+/* contenedor interno que centra los mensajes */
+.chat-interno {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  /* centramos la conversacion */
   max-width: 780px;
   width: 100%;
   margin: 0 auto;
+  padding: 20px 16px;
 }
