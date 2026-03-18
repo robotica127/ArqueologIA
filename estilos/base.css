@@ -19,7 +19,7 @@
 }
 
 body {
-  font-family: 'Fredoka', Arial, sans-serif;
+  font-family: "Fredoka", Arial, sans-serif;
   background-color: var(--fondo);
   color: var(--texto);
   height: 100vh;

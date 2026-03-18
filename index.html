@@ -1,58 +1,60 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ArqueologIA</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ArqueologIA</title>
 
-  <!-- fuente caricaturesca de google fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap">
+    <!-- fuente caricaturesca de google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap"
+    />
 
-  <!-- estilos -->
-  <link rel="stylesheet" href="estilos/base.css">
-  <link rel="stylesheet" href="estilos/encabezado.css">
-  <link rel="stylesheet" href="estilos/chat.css">
-  <link rel="stylesheet" href="estilos/mensaje.css">
-  <link rel="stylesheet" href="estilos/entrada.css">
-  <link rel="stylesheet" href="estilos/escribiendo.css">
-  <link rel="stylesheet" href="estilos/bienvenida.css">
-</head>
-<body>
-
-  <!-- encabezado -->
-  <header class="encabezado">
-    <div class="encabezado-interno">
-      <div class="encabezado-titulo">
-        <div class="encabezado-titulo-fila">
-          <span class="logo-icono">🏺</span>
-          <h1>ArqueologIA</h1>
+    <!-- estilos -->
+    <link rel="stylesheet" href="estilos/base.css" />
+    <link rel="stylesheet" href="estilos/encabezado.css" />
+    <link rel="stylesheet" href="estilos/chat.css" />
+    <link rel="stylesheet" href="estilos/mensaje.css" />
+    <link rel="stylesheet" href="estilos/entrada.css" />
+    <link rel="stylesheet" href="estilos/escribiendo.css" />
+    <link rel="stylesheet" href="estilos/bienvenida.css" />
+  </head>
+  <body>
+    <!-- encabezado -->
+    <header class="encabezado">
+      <div class="encabezado-interno">
+        <div class="encabezado-titulo">
+          <div class="encabezado-titulo-fila">
+            <span class="logo-icono">🏺</span>
+            <h1>ArqueologIA</h1>
+          </div>
+          <p>Experto en arqueología y robótica FLL</p>
         </div>
-        <p>Experto en arqueología y robótica FLL</p>
+        <button id="btn-nueva-conversacion">Nueva conversación</button>
       </div>
-      <button id="btn-nueva-conversacion">Nueva conversación</button>
+    </header>
+
+    <!-- area donde aparecen los mensajes -->
+    <div id="area-chat">
+      <div class="chat-interno"></div>
     </div>
-  </header>
 
-  <!-- area donde aparecen los mensajes -->
-  <div id="area-chat">
-    <div class="chat-interno"></div>
-  </div>
-
-  <!-- barra de abajo para escribir -->
-  <div class="barra-entrada">
-    <div class="barra-entrada-interna">
-      <select id="selector-servicio"></select>
-      <input
-        type="text"
-        id="campo-mensaje"
-        placeholder="Escribe tu pregunta sobre arqueología o FLL..."
-        autocomplete="off"
-      >
-      <button id="btn-enviar">Enviar</button>
+    <!-- barra de abajo para escribir -->
+    <div class="barra-entrada">
+      <div class="barra-entrada-interna">
+        <select id="selector-servicio"></select>
+        <input
+          type="text"
+          id="campo-mensaje"
+          placeholder="Escribe tu pregunta sobre arqueología o FLL..."
+          autocomplete="off"
+        />
+        <button id="btn-enviar">Enviar</button>
+      </div>
     </div>
-  </div>
 
-  <script type="module" src="js/script.js"></script>
-</body>
+    <script type="module" src="js/script.js"></script>
+  </body>
 </html>
