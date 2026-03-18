@@ -1,0 +1,44 @@
+/* estilos del contenido enriquecido dentro de la burbuja de bienvenida */
+
+.bienvenida-saludo {
+  font-family: 'Fredoka', sans-serif;
+  font-size: 1.1em;
+  font-weight: 600;
+  color: var(--verde-oscuro);
+  margin-bottom: 8px;
+}
+
+.bienvenida-descripcion {
+  font-size: 0.9em;
+  color: #555;
+  line-height: 1.5em;
+  margin-bottom: 14px;
+}
+
+.bienvenida-texto-sugerencias {
+  font-size: 0.82em;
+  color: #888;
+  margin-bottom: 8px;
+}
+
+.sugerencias {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.sugerencia {
+  background-color: var(--verde-fondo);
+  color: var(--verde-oscuro);
+  border: 1px solid var(--borde);
+  border-radius: 20px;
+  padding: 8px 14px;
+  font-size: 0.88em;
+  font-family: 'Fredoka', sans-serif;
+  cursor: pointer;
+  text-align: left;
+}
+
+.sugerencia:hover {
+  background-color: var(--borde);
+}

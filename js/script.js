@@ -1,6 +1,6 @@
 // punto de entrada principal
 
-import { agregarMensaje, limpiarChat } from './utilidades/ui.js'
+import { agregarMensaje, limpiarChat, mostrarTarjetaBienvenida } from './utilidades/ui.js'
 import { agregarAlHistorial, obtenerVentana, limpiarHistorial } from './utilidades/historial.js'
 import { enviarAlChat } from './servicios/api.js'
 
@@ -21,12 +21,17 @@ SERVICIOS.forEach(function(s) {
   selector.appendChild(opcion)
 })
 
-// mensaje de bienvenida del agente
-var MENSAJE_BIENVENIDA = '¡Hola! Soy ArqueologIA, tu asistente experto en arqueología y robótica FLL. ¿En qué te puedo ayudar hoy?'
-
-// muestra el mensaje de bienvenida en el chat (sin guardarlo en el historial)
+// muestra la tarjeta de bienvenida y conecta los botones de sugerencia
 function mostrarBienvenida() {
-  agregarMensaje('asistente', MENSAJE_BIENVENIDA)
+  var sugerencias = mostrarTarjetaBienvenida()
+
+  // cuando el usuario hace click en una sugerencia la pone en el campo y la envia
+  sugerencias.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      campo.value = btn.textContent
+      enviarMensaje()
+    })
+  })
 }
 
 // esto se ejecuta cuando el usuario hace click en enviar
