@@ -1,0 +1,54 @@
+/* estilos del header principal */
+
+.encabezado {
+  background-color: var(--verde-oscuro);
+  color: var(--texto-claro);
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.encabezado-interno {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 780px;
+}
+
+.encabezado-interno h1 {
+  font-size: 1.2em;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.encabezado-interno p {
+  font-size: 0.75em;
+  opacity: 0.75;
+  margin-top: 2px;
+}
+
+.encabezado-titulo {
+  display: flex;
+  flex-direction: column;
+}
+
+#btn-nueva-conversacion {
+  background-color: transparent;
+  color: var(--texto-claro);
+  border: 1px solid var(--verde-claro);
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: 13px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+#btn-nueva-conversacion:hover {
+  background-color: var(--verde-principal);
+  border-color: var(--verde-principal);
+}

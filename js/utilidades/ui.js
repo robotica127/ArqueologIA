@@ -2,6 +2,11 @@
 
 var chat = document.getElementById('area-chat')
 
+// limpia todos los mensajes del area de chat
+export function limpiarChat() {
+  chat.innerHTML = ''
+}
+
 // agrega una burbuja al chat y devuelve la referencia a la burbuja
 // rol puede ser 'usuario' o 'asistente'
 export function agregarMensaje(rol, texto) {

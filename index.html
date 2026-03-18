@@ -7,18 +7,30 @@
 
   <!-- estilos -->
   <link rel="stylesheet" href="estilos/base.css">
+  <link rel="stylesheet" href="estilos/encabezado.css">
   <link rel="stylesheet" href="estilos/chat.css">
   <link rel="stylesheet" href="estilos/mensaje.css">
   <link rel="stylesheet" href="estilos/entrada.css">
 </head>
 <body>
 
+  <!-- encabezado -->
+  <header class="encabezado">
+    <div class="encabezado-interno">
+      <div class="encabezado-titulo">
+        <h1>ArqueologIA</h1>
+        <p>Experto en arqueología y robótica FLL</p>
+      </div>
+      <button id="btn-nueva-conversacion">Nueva conversación</button>
+    </div>
+  </header>
+
   <!-- area donde aparecen los mensajes -->
   <div id="area-chat"></div>
 
   <!-- barra de abajo para escribir -->
   <div class="barra-entrada">
-    <div class="barra-entrada-inner">
+    <div class="barra-entrada-interna">
       <input
         type="text"
         id="campo-mensaje"
