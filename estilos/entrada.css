@@ -51,9 +51,22 @@
   background-color: var(--verde-oscuro);
 }
 
+#selector-servicio {
+  padding: 10px 10px;
+  font-size: 14px;
+  border: 1.5px solid var(--borde);
+  border-radius: 20px;
+  background-color: #fff;
+  color: var(--texto);
+  outline: none;
+  cursor: pointer;
+  min-width: 100px;
+}
+
 /* cuando esta deshabilitado no se puede clickear */
 #btn-enviar:disabled,
-#campo-mensaje:disabled {
+#campo-mensaje:disabled,
+#selector-servicio:disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }

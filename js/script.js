@@ -4,13 +4,22 @@ import { agregarMensaje, limpiarChat } from './utilidades/ui.js'
 import { agregarAlHistorial, obtenerVentana, limpiarHistorial } from './utilidades/historial.js'
 import { enviarAlChat } from './servicios/api.js'
 
+// servicios disponibles, agregar aqui para que aparezcan en el dropdown
+var SERVICIOS = ['mock', 'groq', 'cerebras']
+
 // agarro los elementos del html
 var campo = document.getElementById('campo-mensaje')
 var btn = document.getElementById('btn-enviar')
 var btnNueva = document.getElementById('btn-nueva-conversacion')
+var selector = document.getElementById('selector-servicio')
 
-// servicio por defecto
-var servicio = 'mock'
+// lleno el dropdown con los servicios disponibles
+SERVICIOS.forEach(function(s) {
+  var opcion = document.createElement('option')
+  opcion.value = s
+  opcion.textContent = s
+  selector.appendChild(opcion)
+})
 
 // mensaje de bienvenida del agente
 var MENSAJE_BIENVENIDA = '¡Hola! Soy ArqueologIA, tu asistente experto en arqueología y robótica FLL. ¿En qué te puedo ayudar hoy?'
@@ -44,9 +53,10 @@ async function enviarMensaje() {
   // deshabilito el input mientras el asistente responde
   campo.disabled = true
   btn.disabled = true
+  selector.disabled = true
 
-  // mando los ultimos 20 mensajes a la API
-  await enviarAlChat(obtenerVentana(), servicio, burbuja)
+  // mando los ultimos 20 mensajes a la API con el servicio seleccionado
+  await enviarAlChat(obtenerVentana(), selector.value, burbuja)
 
   // guardo la respuesta del asistente en el historial
   agregarAlHistorial('assistant', burbuja.textContent)
@@ -54,6 +64,7 @@ async function enviarMensaje() {
   // vuelvo a habilitar el input
   campo.disabled = false
   btn.disabled = false
+  selector.disabled = false
   campo.focus()
 }
 
