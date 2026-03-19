@@ -1,7 +1,7 @@
 // comunicacion con la API del agente
 
 // var URL_API = "http://localhost:4000/api/chat";
-var URL_API = "https://arqueologia-api-production.up.railway.app/";
+var URL_API = "https://arqueologia-api-production.up.railway.app/api/chat";
 
 // envia los mensajes a la API y va llenando la burbuja con el stream
 export async function enviarAlChat(mensajes, servicio, burbuja) {
