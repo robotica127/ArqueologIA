@@ -31,6 +31,13 @@
   border-bottom-right-radius: 4px;
 }
 
+@media (max-width: 600px) {
+  .burbuja {
+    max-width: 92%;
+    font-size: 14px;
+  }
+}
+
 /* burbuja del asistente */
 .mensaje.asistente .burbuja {
   background-color: #ffffff;

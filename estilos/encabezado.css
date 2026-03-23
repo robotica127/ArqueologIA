@@ -67,3 +67,26 @@
   background-color: var(--verde-principal);
   border-color: var(--verde-principal);
 }
+
+@media (max-width: 600px) {
+  .encabezado {
+    padding: 10px 12px;
+  }
+
+  .encabezado-interno h1 {
+    font-size: 1.3em;
+  }
+
+  .encabezado-interno p {
+    display: none;
+  }
+
+  .logo-icono {
+    font-size: 1.6em;
+  }
+
+  #btn-nueva-conversacion {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+}

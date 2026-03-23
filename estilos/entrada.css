@@ -77,3 +77,33 @@
   opacity: 0.5;
   cursor: not-allowed;
 }
+
+@media (max-width: 600px) {
+  .barra-entrada {
+    padding: 8px 12px;
+  }
+
+  .barra-entrada-interna {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  /* el selector ocupa toda la fila superior */
+  #selector-servicio {
+    width: 100%;
+    min-width: unset;
+  }
+
+  /* el input ocupa el espacio restante y el boton queda fijo */
+  #campo-mensaje {
+    flex: 1;
+    font-size: 14px;
+    padding: 9px 12px;
+  }
+
+  #btn-enviar {
+    flex-shrink: 0;
+    padding: 9px 16px;
+    font-size: 14px;
+  }
+}
