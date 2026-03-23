@@ -81,7 +81,7 @@ async function enviarMensaje() {
   await enviarAlChat(obtenerVentana(), seleccionado.servicio, burbuja);
 
   // guardo la respuesta del asistente en el historial
-  agregarAlHistorial("assistant", burbuja.textContent);
+  agregarAlHistorial("assistant", burbuja.innerText);
 
   // vuelvo a habilitar el input
   campo.disabled = false;
