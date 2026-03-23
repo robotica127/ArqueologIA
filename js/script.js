@@ -13,7 +13,13 @@ import {
 import { enviarAlChat } from "./servicios/api.js";
 
 // servicios disponibles, agregar aqui para que aparezcan en el dropdown
-var SERVICIOS = ["mock", "groq", "cerebras"];
+var SERVICIOS = [
+  { servicio: "openrouter", modelo: "openai/gpt" },
+  { servicio: "gemini", modelo: "gemini" },
+  { servicio: "cerebras", modelo: "qwen" },
+  { servicio: "groq", modelo: "kimi-k2" },
+  { servicio: "mock", modelo: "mock" },
+];
 
 // agarro los elementos del html
 var campo = document.getElementById("campo-mensaje");
@@ -24,8 +30,8 @@ var selector = document.getElementById("selector-servicio");
 // lleno el dropdown con los servicios disponibles
 SERVICIOS.forEach(function (s) {
   var opcion = document.createElement("option");
-  opcion.value = s;
-  opcion.textContent = s;
+  opcion.value = s.servicio;
+  opcion.textContent = s.modelo;
   selector.appendChild(opcion);
 });
 
@@ -68,11 +74,14 @@ async function enviarMensaje() {
   btn.disabled = true;
   selector.disabled = true;
 
-  // mando los ultimos 20 mensajes a la API con el servicio seleccionado
-  await enviarAlChat(obtenerVentana(), selector.value, burbuja);
+  // mando los ultimos 20 mensajes a la API con el servicio y modelo seleccionado
+  var seleccionado = SERVICIOS.find(function (s) {
+    return s.servicio === selector.value;
+  });
+  await enviarAlChat(obtenerVentana(), seleccionado.servicio, burbuja);
 
   // guardo la respuesta del asistente en el historial
-  agregarAlHistorial("assistant", burbuja.textContent);
+  agregarAlHistorial("assistant", burbuja.innerText);
 
   // vuelvo a habilitar el input
   campo.disabled = false;

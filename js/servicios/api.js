@@ -24,6 +24,7 @@ export async function enviarAlChat(mensajes, servicio, burbuja) {
 
     var reader = resp.body.getReader();
     var decoder = new TextDecoder();
+    var textoCompleto = "";
 
     // voy leyendo el stream chunk por chunk
     while (true) {
@@ -41,7 +42,8 @@ export async function enviarAlChat(mensajes, servicio, burbuja) {
         burbuja.innerHTML = "";
       }
 
-      burbuja.textContent += chunk;
+      textoCompleto += chunk;
+      burbuja.innerHTML = marked.parse(textoCompleto);
     }
   } catch (error) {
     console.log("error en el fetch:", error);

@@ -31,10 +31,71 @@
   border-bottom-right-radius: 4px;
 }
 
+@media (max-width: 600px) {
+  .burbuja {
+    max-width: 92%;
+    font-size: 14px;
+  }
+}
+
 /* burbuja del asistente */
 .mensaje.asistente .burbuja {
   background-color: #ffffff;
   color: var(--texto);
   border: 1px solid var(--borde);
   border-bottom-left-radius: 4px !important;
+}
+
+/* estilos markdown dentro de la burbuja del asistente */
+.mensaje.asistente .burbuja p {
+  margin: 0 0 0.6em 0;
+}
+.mensaje.asistente .burbuja p:last-child {
+  margin-bottom: 0;
+}
+.mensaje.asistente .burbuja ul,
+.mensaje.asistente .burbuja ol {
+  margin: 0.4em 0 0.6em 1.4em;
+  padding: 0;
+}
+.mensaje.asistente .burbuja li {
+  margin-bottom: 0.2em;
+}
+.mensaje.asistente .burbuja h1,
+.mensaje.asistente .burbuja h2,
+.mensaje.asistente .burbuja h3 {
+  margin: 0.6em 0 0.3em 0;
+  font-weight: 600;
+}
+.mensaje.asistente .burbuja code {
+  background-color: var(--fondo-verde-claro);
+  border-radius: 4px;
+  padding: 0.1em 0.4em;
+  font-family: monospace;
+  font-size: 0.9em;
+}
+.mensaje.asistente .burbuja pre {
+  background-color: var(--fondo-verde-claro);
+  border-radius: 8px;
+  padding: 10px 14px;
+  overflow-x: auto;
+  margin: 0.4em 0;
+}
+.mensaje.asistente .burbuja pre code {
+  background: none;
+  padding: 0;
+}
+.mensaje.asistente .burbuja blockquote {
+  border-left: 3px solid var(--verde-principal);
+  margin: 0.4em 0;
+  padding-left: 10px;
+  color: #555;
+}
+.mensaje.asistente .burbuja strong {
+  font-weight: 600;
+}
+.mensaje.asistente .burbuja hr {
+  border: none;
+  border-top: 1px solid var(--borde);
+  margin: 0.6em 0;
 }
